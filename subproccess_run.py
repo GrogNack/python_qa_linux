@@ -1,5 +1,6 @@
 import math
 import re
+import datetime
 from collections import Counter
 from subprocess import (
     run, PIPE
@@ -11,6 +12,7 @@ result_user_list = []
 list_of_string = []
 all_mem_used = 0
 all_CPU_used = 0
+file_name = datetime.datetime.now().strftime("%d-%m-%Y-%H:%M") + "-scan.txt"
 
 result = run(["ps", "aux"], stderr=PIPE, stdout=PIPE)
 result = result.stdout.decode("utf-8")
@@ -41,7 +43,7 @@ after_sort = sorted(result_list, key=lambda mem: float(mem['%MEM']), reverse=Tru
 mem_app = str(after_sort[0]['COMMAND'])
 after_sort = sorted(result_list, key=lambda cpu: float(cpu['%CPU']), reverse=True)
 cpu_app = str(after_sort[0]['COMMAND'])
-with open("result.txt", "w") as f:
+with open(file_name, "w") as f:
     f.write("Пользователи системы: " + str(list(users)) + "\n")
     f.write("Процессов запущено: " + str(len(result_user_list)) + "\n")
     f.write("Процессов по пользователям: " + str(user_dict) + "\n")

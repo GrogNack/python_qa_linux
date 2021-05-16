@@ -1,0 +1,7 @@
+Пользователи системы: ['avahi', 'polkitd', 'rtkit', 'colord', 'dbus', 'systemd+', 'root', 'cg']
+Процессов запущено: 307
+Процессов по пользователям: Counter({'root': 226, 'cg': 74, 'avahi': 2, 'systemd+': 1, 'dbus': 1, 'polkitd': 1, 'rtkit': 1, 'colord': 1})
+Всего памяти используется: 38%
+Больше всего памяти ест: /usr/lib/jvm/java-11-openjdk//bin/java
+Всего CPU используется: 82%
+Больше всего CPU ест: /usr/lib/firefox/firefox
